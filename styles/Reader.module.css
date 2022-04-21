@@ -1,0 +1,11 @@
+.shadow-card {
+  @apply rounded-md;
+  height: 60px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.06), 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+.reader-card {
+  @apply bg-lightest-grey relative;
+  height: 780px;
+  width: 1280px;
+}

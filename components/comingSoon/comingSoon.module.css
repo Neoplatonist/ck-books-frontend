@@ -1,0 +1,36 @@
+.input {
+  @apply px-5 py-4
+    border border-core1 rounded-md
+    font-mulish font-normal
+    text-base text-blackest-black;
+}
+
+.input::placeholder {
+  @apply text-medium-grey;
+}
+
+.input:focus {
+  @apply border border-stop outline-none;
+}
+
+.input:disabled {
+  @apply text-medium-grey border-light-grey;
+}
+
+.label {
+  @apply pb-2 block
+    font-mulish font-semibold text-sm
+    text-blackest-black;
+  padding-left: 21px;
+  padding-right: 21px;
+}
+
+.hidden {
+  @apply text-medium-grey;
+}
+
+.error {
+  @apply pt-3 text-sm font-mulish font-semibold text-stop;
+  padding-left: 21px;
+  padding-right: 21px;
+}

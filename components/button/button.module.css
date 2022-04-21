@@ -1,0 +1,51 @@
+.button {
+  @apply px-5 py-4
+    font-mulish text-xs tracking-wide bg-core1
+    flex justify-center items-center
+    gap-3 border-0 rounded-md
+    cursor-pointer;
+  /* w-36 h-14 */
+}
+
+.button:hover {
+  @apply bg-accent3 text-white;
+}
+
+.button:disabled,
+.button:disabled:hover {
+  @apply bg-lightest-grey text-medium-grey cursor-not-allowed;
+}
+
+.alt {
+  @apply px-9 py-3 bg-accent2 font-bold text-sm;
+  /* box-shadow: 0 1.9px 3.1px 0 rgba(0, 0, 0, 0.02),
+    0 8.1px 6.5px 0 rgba(0, 0, 0, 0.03), 0 20px 13px 0 rgba(0, 0, 0, 0.04); */
+}
+
+.linearBlack {
+  @apply bg-white font-bold text-sm border-2;
+  /* w-36 h-16 */
+}
+
+.linearWhite {
+  @apply font-bold text-sm border-2 border-white text-white;
+  background-color: rgba(0, 0, 0, 0.05);
+  /* w-36 h-16 */
+}
+
+.medium {
+  @apply uppercase;
+}
+
+.large {
+  @apply px-7 py-5 font-bold text-sm;
+}
+
+.jumbo {
+  @apply px-9 py-5 bg-core3 uppercase font-bold text-sm;
+  /* w-48 h-16 */
+}
+
+.jumbo:hover {
+  @apply bg-core2 text-blackest-black;
+}

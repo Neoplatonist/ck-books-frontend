@@ -1,0 +1,9 @@
+.subtitle {
+  cursor: pointer;
+  padding-left: 2.5px;
+  padding-right: 2.5px;
+}
+
+.subtitle:hover {
+  color: #00bcd4;
+}
