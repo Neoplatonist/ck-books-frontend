@@ -41,6 +41,10 @@ export default function Dashboard() {
         <Link href="/dashboard/word-list"><a className="hover:border">My Word List</a></Link>
       </div>
 
+      <div className="text-center mt-10 subpixel-antialiased text-2xl">
+        <Link href="/library"><a className="hover:border">Books Library</a></Link>
+      </div>
+
       <div>
         <div
           style={{ height: "50vh" }}

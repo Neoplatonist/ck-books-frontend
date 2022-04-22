@@ -38,7 +38,7 @@ function IndexNav() {
 
         <ul className={[styles["l-nav-list"], mobileNavClass].join(" ")}>
           <li className={styles["l-nav-list__item c-nav"]}>
-            <Link href="/login" passHref>
+            <Link href="/dashboard" passHref>
               {/* <a className={styles["c-nav__link"]}>LOGIN</a> */}
               <a>
                 <HeaderLinks>
@@ -49,7 +49,7 @@ function IndexNav() {
           </li>
 
           <li className={styles["l-nav-list__item c-nav"]}>
-            <Link href="/register" passHref>
+            <Link href="/dashboard" passHref>
               {/* <a className={styles["c-nav__link"]}>CREATE NEW ACCOUNT</a> */}
               <a>
                 <HeaderLinks>
