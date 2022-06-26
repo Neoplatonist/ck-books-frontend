@@ -57,7 +57,7 @@ export default function HomePage({ bgImage }) {
                 </div>
 
                 <figcaption className={''}>
-                  <p className="text-center">Listen and Read amazing stories from all over the world in easy English!</p>
+                  <p className="text-center lg:text-2xl">Listen and Read amazing stories from all over the world in easy English!</p>
                 </figcaption>
               </figure>
             </li>
@@ -73,7 +73,7 @@ export default function HomePage({ bgImage }) {
                 </div>
 
                 <figcaption className={''}>
-                  <p className="text-center">Learn new words, phrases and expressions while you read. Track your progress with a word count meter</p>
+                  <p className="text-center lg:text-2xl">Learn new words, phrases and expressions while you read. Track your progress with a word count meter</p>
                 </figcaption>
               </figure>
             </li>
@@ -89,7 +89,7 @@ export default function HomePage({ bgImage }) {
                 </div>
 
                 <figcaption className={''}>
-                  <p className="text-center">Check your comprehension by doing extra activities!</p>
+                  <p className="text-center lg:text-2xl">Check your comprehension by doing extra activities!</p>
                 </figcaption>
               </figure>
             </li>
