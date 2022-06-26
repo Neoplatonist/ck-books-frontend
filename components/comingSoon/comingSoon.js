@@ -1,42 +1,47 @@
 import { useState } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 import Button from "@/components/button";
-import style from "./comingSoon.module.css";
+// import style from "./comingSoon.module.css";
 
 const ComingSoonNewsletter = ({ status, message, onValidated }) => {
   const [email, setEmail] = useState('');
 
   if (status === "success") {
-    return <p className="c-subscribe-form-status__success">{message}</p>;
+    return <p className="">{message}</p>;
   }
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const handleSubmit = event => {
+    event.preventDefault();
     email && onValidated({
       EMAIL: email
     });
   };
 
+  const handleInput = event => {
+    event.preventDefault();
+    setEmail(event.target.value);
+  };
+
   return (
-    <form className="c-subscribe-form flex" onSubmit={handleSubmit}>
+    <form className="mb-20 flex flex-col md:flex-row md:h-[50px]" onSubmit={handleSubmit}>
       {status === "sending" && (
-        <div className="c-subscribe-form-status__sending">Sending...</div>
+        <div className="">Sending...</div>
       )}
 
       {status === "error" && (
         <div
-          className="c-subscribe-form-status__error"
+          className="text-sm font-mulish font-semibold text-system-error"
           dangerouslySetInnerHTML={{ __html: message }}
         />
       )}
 
       <input id="email"
-        className={["c-subscribe-form__input", "mr-5", style.input].join(" ")}
+        className="h-full mb-7 px-5 py-3 md:w-[300px] md:mr-8"
         type="email"
         name="email"
         autoComplete="email"
         placeholder="Enter your email here"
-        onChange={e => setEmail(e.target.value)}
+        onChange={handleInput}
         required
       />
 
@@ -52,13 +57,13 @@ const ComingSoonNewsletter = ({ status, message, onValidated }) => {
       /> */}
 
       {/* <input id="submit"
-        className="c-subscribe-form__submit"
+        className=""
         type="submit"
         name="submit"
         value="Sign Up"
       /> */}
 
-      <Button variant="large">Sign Up!</Button>
+      <Button variant="large" style="w-40 mx-auto">Sign Up!</Button>
     </form>
   );
 };

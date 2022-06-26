@@ -1,6 +1,4 @@
 .header-links {
-  @apply font-montserrat font-bold text-lg
-  text-black cursor-pointer hover:text-core1
-    leading-7 tracking-widest subpixel-antialiased
-    mr-12 flex align-middle justify-center;
+  @apply text-black cursor-pointer hover:text-core1
+    flex align-middle justify-center text-base md:text-lg;
 }

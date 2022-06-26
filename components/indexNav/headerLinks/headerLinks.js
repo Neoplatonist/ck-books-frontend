@@ -1,7 +1,7 @@
 import styles from './headerLinks.module.css';
 
 function HeaderLinks({ children }) {
-  return <div className={styles['header-links']}> {children} </div>;
+  return <h4 className={styles['header-links']}> {children} </h4>;
 }
 
 export default HeaderLinks;

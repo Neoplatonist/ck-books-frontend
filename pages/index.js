@@ -1,116 +1,130 @@
 import Head from 'next/head';
 import Image from 'next/image';
+import { getPlaiceholder } from "plaiceholder";
+import LandingPageLayout from '@/layouts/landingPage';
 import {
-  Button,
   IndexNav,
-  Layout,
   MailchimpFormContainer
 } from '@/components/index';
-import styles from '@/styles/Index.module.css';
+import feature1 from '@/public/images/landingpg_feature1_307.gif';
+import feature2 from '@/public/images/landingpg_feature2_v2_307.gif';
+import feature3 from '@/public/images/landingpg_feature3_v2_307.gif';
 
-export default function HomePage({ allCategories }) {
+export default function HomePage({ bgImage }) {
   return (
-    <Layout>
-      <Head>
-        <title>Books | Cuppa Kappa</title>
-        <meta name="description" content="Learn english with creativity" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <header className={styles["l-header"]}>
-        <div className={styles["l-header__wrapper"]}>
+    <LandingPageLayout>
+      <header className={''}>
+        <div className={''}>
           <IndexNav />
 
-          {/* Background Image */}
-          <div className={styles["l-header__bg"]}>
-            <Image
-              src="/images/landpage_header2.jpg"
-              alt="pc screen showing the book reading app"
-              height={729}
-              width={734}
-              quality={100}
-              priority={true}
-            />
-          </div>
+          <div className="lg:flex lg:justify-between lg:flex-row-reverse lg:-mt-5">
+            {/* Background Image */}
+            <div className="md:mt-5 md:w-[530px] md:flex md:ml-auto lg:-z-10 lg:w-[45%] text-">
+              <Image
+                {...bgImage}
+                alt="pc screen showing the book reading app"
+                placeholder="blur"
+              />
+            </div>
 
-          <div className={styles["c-header-body"]}>
-            <p className={styles["c-header-body__text"]}>
-              Experience English with an open <br /> mind,
-              learn English with creativity.
-            </p>
-
-            <div className={styles["c-header-body__button"]}>
-              <Button variant="jumbo">
-                Coming Soon!
-              </Button>
+            <div
+              id="landing-page-blurb-wrapper"
+              className="mx-8 md:hidden lg:!block lg:w-2/3 lg:ml-20 lg:mr-0 lg:mt-custom-clamp"
+            >
+              <h2
+                id="landing-page-blurb"
+                className="mx-auto my-4 lg:text-6xl lg:mx-0 lg:font-light lg:text-custom-clamp"
+              >
+                Experience English with an open mind;
+                learn English with creativity.
+              </h2>
             </div>
           </div>
         </div>
       </header>
 
-      <main className={styles["l-main-content"]}>
-        <article className={styles["l-about"]}>
-          <ul className={styles["l-about-list"]}>
-            <li className={styles["l-about-list__item"]}>
-              <figure className={styles["c-about-figure"]}>
-                <div className={styles["c-about-figure__img"]}>
+      <main className={'px-8 flex flex-col items-center lg:mx-20 lg:p-0'}>
+        <article className={''}>
+          <ul className={'md:flex'}>
+            <li className={'my-8 md:w-60 md:pr-5 lg:w-1/3'}>
+              <figure className={''}>
+                <div className={'flex justify-center w-60 mx-auto md:w-40 lg:w-full'}>
                   <Image
-                    src="/images/landingpg_feature1_307.gif"
+                    src={feature1}
                     alt="Interactive Stories Picture"
-                    layout="fill"
-                    quality={100}
+                  // quality={100}
                   />
                 </div>
 
-                <figurecaption className={styles["c-about-figure__caption"]}>
-                  <h3>Listen and Read amazing stories from all over the world in easy English!</h3>
-                </figurecaption>
+                <figcaption className={''}>
+                  <p className="text-center">Listen and Read amazing stories from all over the world in easy English!</p>
+                </figcaption>
               </figure>
             </li>
 
-            <li className={styles["l-about-list__item"]}>
-              <figure className={styles["c-about-figure"]}>
-                <div className={styles["c-about-figure__img"]}>
+            <li className={'my-8 md:w-60 md:px-5 lg:w-1/3'}>
+              <figure className={''}>
+                <div className={'flex justify-center w-60 mx-auto md:w-40 lg:w-full'}>
                   <Image
-                    src="/images/landingpg_feature2_v2_307.gif"
+                    src={feature2}
                     alt="Interactive Stories Picture"
-                    layout="fill"
-                    quality={100}
+                  // quality={100}
                   />
                 </div>
 
-                <figurecaption className={styles["c-about-figure__caption"]}>
-                  <h3>Learn new words, phrases and expressions while you read. Track your progress with a word count meter</h3>
-                </figurecaption>
+                <figcaption className={''}>
+                  <p className="text-center">Learn new words, phrases and expressions while you read. Track your progress with a word count meter</p>
+                </figcaption>
               </figure>
             </li>
 
-            <li className={styles["l-about-list__item"]}>
-              <figure className={styles["c-about-figure"]}>
-                <div className={styles["c-about-figure__img"]}>
+            <li className={'my-8 md:w-60 md:pl-5 lg:w-1/3'}>
+              <figure className={''}>
+                <div className={'flex justify-center w-60 mx-auto md:w-40 lg:w-full'}>
                   <Image
-                    src="/images/landingpg_feature3_v2_307.gif"
+                    src={feature3}
                     alt="Interactive Stories Picture"
-                    layout="fill"
-                    quality={100}
+                  // quality={100}
                   />
                 </div>
 
-                <figurecaption className={styles["c-about-figure__caption"]}>
-                  <h3>Check your comprehension by doing extra activities!</h3>
-                </figurecaption>
+                <figcaption className={''}>
+                  <p className="text-center">Check your comprehension by doing extra activities!</p>
+                </figcaption>
               </figure>
             </li>
           </ul>
         </article>
 
-        <article className={styles["l-subscribe"]}>
-          <p className={styles["l-subscribe__body"]}>Sign up to hear more about Cuppa Books!</p>
+        <article className={'md:mt-10'}>
+          <h4 className={'text-accent3 text-center mb-9 md:mb-4'}>Sign up to hear more about Cuppa Books!</h4>
 
           <MailchimpFormContainer />
         </article>
       </main>
-    </Layout>
+
+      <footer className="flex justify-center my-5">
+        Copyright &copy; {new Date().getFullYear()}, Cuppa Kappa and/or its affiliates. All rights reserved.
+      </footer>
+    </LandingPageLayout >
   );
 }
 
+export const getStaticProps = async () => {
+  const { base64, img } = await getPlaiceholder("/images/landpage_header2_latest.jpg");
+
+  return {
+    props: {
+      bgImage: {
+        ...img,
+        blurDataURL: base64
+      }
+    }
+  };
+};
+
+// HomePage.getLayout = page => (
+//   <LandingPageLayout>
+//     {page}
+//   </LandingPageLayout>
+// );
