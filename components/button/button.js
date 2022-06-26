@@ -23,13 +23,13 @@ const setMode = (variant) => {
 /**
  * Primary UI component for user interaction
  */
-const Button = ({ variant, label, disabled, ...props }) => {
+const Button = ({ variant, label, disabled, style, ...props }) => {
   const mode = setMode(variant);
 
   return (
     <button
       type='button'
-      className={[styles.button, mode].join(' ')}
+      className={[styles.button, mode, style].join(' ')}
       disabled={disabled}
       {...props}
     >
