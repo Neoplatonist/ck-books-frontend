@@ -3,7 +3,8 @@ import { useRouter } from 'next/router';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
 import classNames from 'classnames';
-import { flushSync } from 'react-dom';
+import Button from '@/components/button';
+import Link from 'next/link';
 
 const VocabList = [
   {
@@ -58,6 +59,7 @@ function DropZone({ item, x, y, vocabWordList, handleDrop }) {
                 key={vocab.word}
                 item={vocab}
                 handleDrop={handleDrop}
+                style={vocab.word === item.word ? "bg-system-success" : "bg-system-error"}
               />
             );
           }
@@ -74,7 +76,7 @@ function List1({ vocabDefinitionList, vocabWordList, zone, handleDrop }) {
       {
         vocabDefinitionList.map((item, id) => {
           return (
-            <li key={id} className="flex my-4 px-16">
+            <li key={id} className="flex items-center my-4 px-16">
               <div className="basis-1/2">
                 {item.definition}
               </div>
@@ -96,7 +98,7 @@ function List1({ vocabDefinitionList, vocabWordList, zone, handleDrop }) {
   );
 }
 
-function Draggable({ item, handleDrop }) {
+function Draggable({ item, handleDrop, style }) {
   const [{ isDragging }, drag] = useDrag({
     type: ItemTypes.VOCAB_CARD,
     item: { word: item?.word, x: item?.x, y: item?.y },
@@ -133,7 +135,8 @@ function Draggable({ item, handleDrop }) {
         "w-full h-24 max-w-[540px] flex justify-center items-center cursor-pointer",
         {
           'opacity-0': isDragging,
-        }
+        },
+        style,
       )}
     >
       {item.word}
@@ -144,7 +147,7 @@ function Draggable({ item, handleDrop }) {
 function List2({ vocabWordList, handleDrop, zone }) {
   const [{ isOver, canDrop, didDrop }, drop] = useDrop({
     accept: ItemTypes.VOCAB_CARD,
-    drop: () => ({ x: zone }),
+    drop: (item) => ({ x: zone, y: vocabWordList.findIndex(listItem => listItem.word === item.word) }),
     canDrop: ((canDropItem, monitor) => {
       const filteredList = vocabWordList.filter(listItem =>
         listItem.y === canDropItem.y && listItem.x !== zone);
@@ -206,6 +209,14 @@ function Activity() {
     ))
   );
 
+  const isCorrect = VocabList.every((item, id) =>
+    vocabWordList.find(listItem =>
+      listItem.word === item.word && listItem.x === 0 && id === listItem.y
+    )
+  );
+
+  console.log({ isCorrect });
+
   return (
     <div>
       <h2>BookID: {book} - ActivityID: {activity}</h2>
@@ -226,6 +237,14 @@ function Activity() {
           />
         </div>
       </DndProvider>
+
+      <div className={classNames("w-full flex justify-center", { hidden: !isCorrect })}>
+        <Link href={`/book/${book}/activity/${activity}/result`}>
+          <a>
+            <Button style="!bg-system-success">Great Job! Continue -&gt;</Button>
+          </a>
+        </Link>
+      </div>
     </div>
   );
 }
