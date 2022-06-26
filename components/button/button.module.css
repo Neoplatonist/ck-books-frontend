@@ -47,5 +47,5 @@
 }
 
 .jumbo:hover {
-  @apply bg-core2 text-blackest-black;
+  @apply bg-core2 text-black;
 }
