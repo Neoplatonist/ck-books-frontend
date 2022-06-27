@@ -19,7 +19,7 @@ export default function HomePage({ bgImage }) {
 
           <div className="lg:flex lg:justify-between lg:flex-row-reverse lg:-mt-5">
             {/* Background Image */}
-            <div className="md:mt-5 md:w-[530px] md:flex md:ml-auto lg:-z-10 lg:w-[45%] text-">
+            <div className="md:mt-5 md:w-[530px] md:flex md:ml-auto lg:-z-10 lg:w-[45%] lg:justify-end">
               <Image
                 {...bgImage}
                 alt="pc screen showing the book reading app"
