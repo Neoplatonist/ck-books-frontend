@@ -39,6 +39,7 @@ function IndexNav() {
               src={logo}
               alt="cuppa kappa logo"
               priority
+              quality={100}
             />
           </a>
         </Link>

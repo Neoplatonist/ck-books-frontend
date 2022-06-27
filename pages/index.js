@@ -24,6 +24,7 @@ export default function HomePage({ bgImage }) {
                 {...bgImage}
                 alt="pc screen showing the book reading app"
                 placeholder="blur"
+                quality={100}
               />
             </div>
 
@@ -52,7 +53,7 @@ export default function HomePage({ bgImage }) {
                   <Image
                     src={feature1}
                     alt="Interactive Stories Picture"
-                  // quality={100}
+                    quality={100}
                   />
                 </div>
 
@@ -68,7 +69,7 @@ export default function HomePage({ bgImage }) {
                   <Image
                     src={feature2}
                     alt="Interactive Stories Picture"
-                  // quality={100}
+                    quality={100}
                   />
                 </div>
 
@@ -84,7 +85,7 @@ export default function HomePage({ bgImage }) {
                   <Image
                     src={feature3}
                     alt="Interactive Stories Picture"
-                  // quality={100}
+                    quality={100}
                   />
                 </div>
 
